@@ -6,9 +6,9 @@ int max2(int a,int b) {
 }
 
 int main(void){
-    int in1,in2,in3,maximum;
+    int in1,in2,in3,max;
     scanf("%d %d %d",&in1,&in2,&in3);
-    maximum = max2(in1,in2); // 上で定義した関数の呼び出し
-    maximum = max2(maximum,in3); // 上で定義した関数の呼び出し
-    printf("最大値は%dです\n",maximum);
+    max = max2(in1,in2); // 上で定義した関数の呼び出し
+    max = max2(max,in3); // 上で定義した関数の呼び出し
+    printf("最大値は%dです\n",max);
 }
