@@ -11,6 +11,7 @@ char *copy_string(char *in){
         out[i] = in[i];
     return out;
 }
+
 int main(void){
     char *str = copy_string("Hello, world!");
     printf("%s\n",str);
