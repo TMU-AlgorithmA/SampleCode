@@ -6,7 +6,7 @@ char *copy_string(char *in){
     char *out = malloc(sizeof(char)*(strlen(in)+1));
     if (out == NULL) {// メモリ確保失敗の場合の処理
         fprintf(stderr, "メモリ確保失敗．\n"); // エラーメッセージ
-        return NULL;
+        return NULL; // 失敗時は関数を終了する
     }
     out[0] = in[0];
     for (int i=1; in[i-1]; i++) // 文字列のコピー (ヌル文字まで)
@@ -16,6 +16,9 @@ char *copy_string(char *in){
 
 int main(void){
     char *str = copy_string("Hello, world!");
-    printf("%s\n",str);
-    free(str); // 確保したメモリを解放
+    if (str != NULL) {
+        str[12] = '.';
+        printf("%s\n",str);
+        free(str); // 確保したメモリを解放
+    }
 }
