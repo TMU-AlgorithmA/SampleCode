@@ -8,7 +8,10 @@ char *copy_string(char *in){
         out[i] = in[i];
         if (in[i] == '\0') break; // ヌル文字で終了
         out = realloc(out,sizeof(char)*(i+2));
-        if (out == NULL) fprintf(stderr, "メモリ確保失敗．\n");
+        if (out == NULL) {
+            fprintf(stderr, "メモリ確保失敗．\n");
+            break;
+        }
     }
     return out;
 }
