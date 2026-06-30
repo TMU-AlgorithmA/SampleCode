@@ -9,7 +9,10 @@ char *save_str(void){
     int length = strlen(tmp); // 文字列の長さの保存
     if (tmp[length-1] == '\n') length--; // 改行文字の処理
     char *out = malloc(sizeof(char)*(length+1));
-    if (out == NULL) fprintf(stderr,"メモリ確保失敗\n");
+    if (out == NULL) {
+        fprintf(stderr,"メモリ確保失敗\n");
+        return NULL;
+    }
     for (int i=0; i< length; i++) out[i] = tmp[i];
     out[length] = '\0'; // ヌル文字の追加
     return out;
